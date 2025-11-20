@@ -29,14 +29,14 @@ Quick prerequisites
 1. Configure environment
 
     Copy the example env and edit if needed:
-
     cd backend
+
     cp .env.example .env
 
 
     backend/.env contains:
-
     DATABASE_URL=postgresql://<user>:<password>@<host>:<port>/<dbname>
+
     PORT=4000
 
 2. Create database and schema
@@ -48,16 +48,23 @@ Quick prerequisites
     schema.sql creates the drugs table and indexes.
 
 3. Install dependencies & seed data
+
     cd backend  
+
     npm install
+
     // ensure backend/drugs.json contains your data file
+    
     npm run seed
 
     Seeding reads backend/drugs.json and inserts rows.
 
 4. Start backend
+
     npm start
-    // or
+    
+        or
+
     node src/index.js
 
 Default server: http://localhost:4000 (or PORT from .env).
