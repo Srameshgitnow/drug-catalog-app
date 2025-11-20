@@ -17,53 +17,48 @@ Key behaviours:
 
 Quick prerequisites
 
-Node.js (v16.20+ or v18+ recommended)
-npm
-PostgreSQL (local or Docker)
-Optional: pgAdmin / TablePlus / DBeaver to view the DB
+* Node.js (v16.20+ or v18+ recommended)
+* npm
+* PostgreSQL (local or Docker)
+* Optional: pgAdmin / TablePlus / DBeaver to view the DB
 
 -------------
 
-## Backend — Setup & run
+## Backend - Setup & run
 
 1. Configure environment
 
-Copy the example env and edit if needed:
+    Copy the example env and edit if needed:
 
-cd backend
+    cd backend
+    cp .env.example .env
 
-cp .env.example .env
 
+    backend/.env contains:
 
-backend/.env contains:
-
-DATABASE_URL=postgresql://<user>:<password>@<host>:<port>/<dbname>
-
-PORT=4000
+    DATABASE_URL=postgresql://<user>:<password>@<host>:<port>/<dbname>
+    PORT=4000
 
 2. Create database and schema
 
-Use psql or pgAdmin to create the database drugsdb (or your chosen name matching DATABASE_URL). Then run schema:
+    Use psql or pgAdmin to create the database drugsdb (or your chosen name matching DATABASE_URL). Then run schema:
 
-# from project root or backend/
-psql -d drugsdb -f backend/schema.sql
+    psql -d drugsdb -f backend/schema.sql
 
-
-schema.sql creates the drugs table and indexes.
+    schema.sql creates the drugs table and indexes.
 
 3. Install dependencies & seed data
-cd backend
-npm install
-# ensure backend/drugs.json contains your data file
-npm run seed
+    cd backend  
+    npm install
+    // ensure backend/drugs.json contains your data file
+    npm run seed
 
-Seeding reads backend/drugs.json and inserts rows.
+    Seeding reads backend/drugs.json and inserts rows.
 
 4. Start backend
-npm start
-// or
-node src/index.js
-
+    npm start
+    // or
+    node src/index.js
 
 Default server: http://localhost:4000 (or PORT from .env).
 
