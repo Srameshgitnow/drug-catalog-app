@@ -1,4 +1,4 @@
-Drug-catalog-app
+# Drug-catalog-app
 
 Drug-catalog-app is a minimal full-stack demo that shows a table of drug records (from a seeded dataset) with backend-driven table configuration and client-side filtering by company.
 
@@ -24,20 +24,21 @@ Optional: pgAdmin / TablePlus / DBeaver to view the DB
 
 -------------
 
-Backend — Setup & run
+## Backend — Setup & run
 
 1. Configure environment
 
 Copy the example env and edit if needed:
 
 cd backend
+
 cp .env.example .env
-# edit backend/.env to match your DB credentials if required
 
 
 backend/.env contains:
 
 DATABASE_URL=postgresql://<user>:<password>@<host>:<port>/<dbname>
+
 PORT=4000
 
 2. Create database and schema
@@ -60,7 +61,7 @@ Seeding reads backend/drugs.json and inserts rows.
 
 4. Start backend
 npm start
-# or
+// or
 node src/index.js
 
 
@@ -117,7 +118,7 @@ Response row fields (example):
 
 ----------------
 
-Frontend — Setup & run
+## Frontend — Setup & run
 1. Install deps
 cd frontend
 npm install
