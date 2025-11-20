@@ -67,11 +67,11 @@ Quick prerequisites
 
     node src/index.js
 
-Default server: http://localhost:4000 (or PORT from .env).
+    Default server: http://localhost:4000 (or PORT from .env).
 
 ------------
 
-Backend — API Endpoints
+Backend - API Endpoints
 
 * GET /api/config
 
@@ -101,7 +101,7 @@ Returns an array of distinct company names:
 
 Returns drug rows ordered by launch_date descending. Optional query:
 
-?company=Company%20Name — filters results by company.
+?company=Company%20Name, filters results by company.
 
 Example:
 
@@ -121,7 +121,7 @@ Response row fields (example):
 
 ----------------
 
-## Frontend — Setup & run
+## Frontend - Setup & run
 1. Install deps
 
     cd frontend
@@ -143,9 +143,9 @@ Open the Vite URL (e.g. http://localhost:5173) in your browser.
 
 * Initial load fetches /api/drugs and /api/companies.
 
-* Filter by dropdown: select a company from the Company dropdown — frontend requests /api/drugs?company=... and updates the table.
+* Filter by dropdown: select a company from the Company dropdown - frontend requests /api/drugs?company=... and updates the table.
 
-* Filter by clicking company cell: click a company name in any row — same filter is applied programmatically.
+* Filter by clicking company cell: click a company name in any row - same filter is applied programmatically.
 
 * Date formatting: new Date(launchDate).toLocaleDateString() is used, so the display format depends on browser/system locale.
 
