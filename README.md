@@ -153,7 +153,7 @@ Open the Vite URL (e.g. http://localhost:5173) in your browser.
 
 ----------
 
-Tests
+## Tests
 
 Unit tests for the frontend are set up with Jest + React Testing Library.
 
