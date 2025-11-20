@@ -53,8 +53,8 @@ Quick prerequisites
 
     npm install
 
-    // ensure backend/drugs.json contains your data file
-    
+    /* ensure backend/drugs.json contains your data file */
+
     npm run seed
 
     Seeding reads backend/drugs.json and inserts rows.
@@ -90,13 +90,14 @@ Returns table configuration (columns + labels). Example:
 
 Frontend uses this to render headers and which row cells to display.
 
+
 * GET /api/companies
 
 Returns an array of distinct company names:
 
 ["Merck Sharp & Dohme Corp.", "Pfizer Inc.", ...]
 
-GET /api/drugs
+* GET /api/drugs
 
 Returns drug rows ordered by launch_date descending. Optional query:
 
@@ -104,7 +105,7 @@ Returns drug rows ordered by launch_date descending. Optional query:
 
 Example:
 
-* GET /api/drugs?company=Merck%20Sharp%20%26%20Dohme%20Corp.
+GET /api/drugs?company=Merck%20Sharp%20%26%20Dohme%20Corp.
 
 
 Response row fields (example):
@@ -122,31 +123,33 @@ Response row fields (example):
 
 ## Frontend — Setup & run
 1. Install deps
-cd frontend
-npm install
+
+    cd frontend
+
+    npm install
 
 2. Start dev server
 
-Ensure backend is running (see above), then:
+    Ensure backend is running (see above), then:
 
-npm run dev
+    npm run dev
 
 
 Open the Vite URL (e.g. http://localhost:5173) in your browser.
 
 3. App behaviour (user actions)
 
-Table headers are rendered from the backend /api/config.
+* Table headers are rendered from the backend /api/config.
 
-Initial load fetches /api/drugs and /api/companies.
+* Initial load fetches /api/drugs and /api/companies.
 
-Filter by dropdown: select a company from the Company dropdown — frontend requests /api/drugs?company=... and updates the table.
+* Filter by dropdown: select a company from the Company dropdown — frontend requests /api/drugs?company=... and updates the table.
 
-Filter by clicking company cell: click a company name in any row — same filter is applied programmatically.
+* Filter by clicking company cell: click a company name in any row — same filter is applied programmatically.
 
-Date formatting: new Date(launchDate).toLocaleDateString() is used, so the display format depends on browser/system locale.
+* Date formatting: new Date(launchDate).toLocaleDateString() is used, so the display format depends on browser/system locale.
 
-Ordering: data shown is ordered descending by launch date (server-side).
+* Ordering: data shown is ordered descending by launch date (server-side).
 
 ----------
 
@@ -158,14 +161,16 @@ Run tests
 
 From frontend/:
 
-npm test
+    npm test
+
 
 What is tested
 
-The example test DrugsTable.test.jsx mocks API calls and asserts:
 
-Initial data load displays rows.
+* The example test DrugsTable.test.jsx mocks API calls and asserts:
 
-Dropdown filtering shows only matching rows.
+    * Initial data load displays rows.
 
-Clicking a company cell filters the rows.
+    * Dropdown filtering shows only matching rows.
+
+    * Clicking a company cell filters the rows.
