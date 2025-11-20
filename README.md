@@ -61,7 +61,7 @@ Quick prerequisites
 
 4. Start backend
 
-    npm run start
+    npm start
     
         or
 
